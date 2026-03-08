@@ -15,6 +15,10 @@ variable "aws_region" {
   default = "us-east-2"
 }
 
+variable "aws_user" {
+  type    = string
+}
+
 variable "project_name" {
   type = string
   default = "MyProject"

@@ -1,10 +1,3 @@
-data "terraform_remote_state" "data_stores" {
-  backend = "local"
-  config = {
-    path = "../data_stores/terraform.tfstate"
-  }
-}
-
 data "aws_iam_policy_document" "lambda_trust_policy" {
   statement {
     actions = ["sts:AssumeRole"]
@@ -60,7 +53,7 @@ data "aws_iam_policy_document" "triggerTextract_permissions_doc" {
         "dynamodb:UpdateItem",
         "dynamodb:BatchWriteItem"
       ]
-      resources = ["${data.terraform_remote_state.data_stores.outputs.dynamo_table _arn}"]
+      resources = ["${data.terraform_remote_state.data_stores.outputs.dynamo_table_arn}"]
     }
 
   # 5. Logging

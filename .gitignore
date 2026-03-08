@@ -36,8 +36,13 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Output code archives
-*output/
+# Hide website code files. Ensure all private information is hidden, top priority for me.
+*.css
+*.html
+*.js
 
-# My Notes.
-*.txt
+# Ignore backend config for remote state
+backend.tf
+
+# Ignore Output
+output/*
