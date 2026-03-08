@@ -23,3 +23,7 @@ variable "project_name" {
   type = string
   default = "MyProject"
 }
+
+variable "route53_record_for_corrector" {
+  type = string
+}
